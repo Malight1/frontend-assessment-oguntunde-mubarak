@@ -66,8 +66,12 @@ export async function generateMetadata({ params }: DetailPageProps): Promise<Met
  * @returns An array of `{ id }` params objects for static generation.
  */
 export async function generateStaticParams() {
-  const data = await fetchPopularMovies(1);
-  return data.results.slice(0, 20).map((movie) => ({ id: String(movie.id) }));
+  try {
+    const data = await fetchPopularMovies(1);
+    return data.results.slice(0, 20).map((movie) => ({ id: String(movie.id) }));
+  } catch {
+    return [];
+  }
 }
 
 export default async function MovieDetailPage({ params }: DetailPageProps) {
