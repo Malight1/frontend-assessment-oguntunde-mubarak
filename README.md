@@ -16,6 +16,8 @@ npm run dev                         # http://localhost:3000
 
 **TMDB API key** → free at https://developer.themoviedb.org/docs/getting-started (instant, no credit card).
 
+For Vercel deployments, set `TMDB_API_KEY` in **Project Settings → Environment Variables** for Production (and Preview if needed), then redeploy.
+
 ---
 
 ## Architecture Decisions

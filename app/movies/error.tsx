@@ -19,6 +19,8 @@ interface ErrorPageProps {
 }
 
 export default function MoviesError({ error, reset }: ErrorPageProps) {
+  const isTmdbAuthError = /TMDB\s+\/.+\sfailed:\s401/i.test(error.message);
+
   /**
    * Log the error to the console in development so it's visible in DevTools.
    * In production you would send this to an observability service (e.g. Sentry).
@@ -32,8 +34,9 @@ export default function MoviesError({ error, reset }: ErrorPageProps) {
       <span className={styles.icon} aria-hidden="true">⚡</span>
       <h2 className={styles.heading}>Something went wrong</h2>
       <p className={styles.body}>
-        We couldn&apos;t load the movie list. This is usually a temporary
-        network issue.
+        {isTmdbAuthError
+          ? "TMDB credentials are missing or invalid. Set TMDB_API_KEY in your environment variables and redeploy."
+          : "We couldn&apos;t load the movie list. This is usually a temporary network issue."}
       </p>
       <div className={styles.actions}>
         <button className={styles.retryBtn} onClick={reset}>
