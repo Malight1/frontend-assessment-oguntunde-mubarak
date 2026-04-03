@@ -1,0 +1,123 @@
+/* globals.css
+ * Design tokens, minimal reset, and layout shell styles.
+ * Component-specific styles live in their own CSS Modules.
+ */
+
+/* ── Reset ──────────────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Design Tokens ───────────────────────────────────────────────────────────── */
+:root {
+  --font-display: var(--font-syne), "Syne", sans-serif;
+  --font-body: var(--font-dm-sans), "DM Sans", sans-serif;
+  --color-bg:        #08080e;
+  --color-surface:   #0f0f13;
+  --color-surface-2: #1a1a24;
+  --color-border:    rgba(255, 255, 255, 0.07);
+  --color-text:      #f0f0f5;
+  --color-text-muted: #8888a0;
+  --color-text-dim:  #555570;
+  --color-accent:    #ffc83c;
+  --color-accent-dim: rgba(255, 200, 60, 0.15);
+  --max-width: 1400px;
+  --page-padding: clamp(16px, 4vw, 48px);
+}
+
+/* ── Base ────────────────────────────────────────────────────────────────── */
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100dvh;
+  line-height: 1.5;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+/* ── App Shell ───────────────────────────────────────────────────────────── */
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+/* ── Header ──────────────────────────────────────────────────────────────── */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  padding: 0 var(--page-padding);
+  background: rgba(8, 8, 14, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--color-text);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color 0.15s ease;
+}
+
+.site-logo:hover { color: var(--color-accent); }
+
+.logo-mark {
+  color: var(--color-accent);
+  font-size: 1.2rem;
+}
+
+/* ── Main ────────────────────────────────────────────────────────────────── */
+.site-main {
+  flex: 1;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 32px var(--page-padding);
+}
+
+/* ── Footer ──────────────────────────────────────────────────────────────── */
+.site-footer {
+  padding: 24px var(--page-padding);
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+}
+.site-footer p { font-size: 0.75rem; color: var(--color-text-dim); }
+.site-footer a { color: var(--color-text-muted); text-decoration: none; transition: color 0.15s ease; }
+.site-footer a:hover { color: var(--color-accent); }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}

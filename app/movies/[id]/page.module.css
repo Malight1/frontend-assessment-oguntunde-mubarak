@@ -1,0 +1,197 @@
+/* app/movies/[id]/page.module.css */
+
+.page {
+  position: relative;
+}
+
+/* ── Backdrop ────────────────────────────────────────────────────────────── */
+
+.backdropWrapper {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.backdrop {
+  object-fit: cover;
+  object-position: top center;
+  opacity: 0.12;
+}
+
+.backdropScrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--color-bg) 85%
+  );
+}
+
+/* ── Content ─────────────────────────────────────────────────────────────── */
+
+.content {
+  position: relative;
+}
+
+/* ── Hero layout ─────────────────────────────────────────────────────────── */
+
+.hero {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+@media (max-width: 700px) {
+  .hero {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+/* ── Poster ──────────────────────────────────────────────────────────────── */
+
+.posterWrapper {
+  flex-shrink: 0;
+  width: 220px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 700px) {
+  .posterWrapper { width: 140px; }
+}
+
+.poster {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.posterFallback {
+  width: 100%;
+  aspect-ratio: 2/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-surface-2);
+  font-size: 3rem;
+}
+
+/* ── Info column ─────────────────────────────────────────────────────────── */
+
+.info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+  padding-top: 8px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 4vw, 2.8rem);
+  font-weight: 800;
+  color: var(--color-text);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.tagline {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+/* ── Meta row ────────────────────────────────────────────────────────────── */
+
+.metaRow {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.metaChip {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 3px 10px;
+  letter-spacing: 0.04em;
+}
+
+/* ── Genres ──────────────────────────────────────────────────────────────── */
+
+.genres {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.genreTag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  background: var(--color-accent-dim);
+  border: 1px solid rgba(255, 200, 60, 0.2);
+  border-radius: 6px;
+  padding: 4px 12px;
+  text-decoration: none;
+  transition: background 0.15s ease;
+  letter-spacing: 0.02em;
+}
+
+.genreTag:hover {
+  background: rgba(255, 200, 60, 0.25);
+}
+
+/* ── Rating ──────────────────────────────────────────────────────────────── */
+
+.ratingRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.voteCount {
+  font-size: 0.8rem;
+  color: var(--color-text-dim);
+}
+
+/* ── Overview ────────────────────────────────────────────────────────────── */
+
+.overview {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  max-width: 640px;
+}
+
+/* ── Companies ───────────────────────────────────────────────────────────── */
+
+.companies {
+  display: flex;
+  gap: 8px;
+  font-size: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.companiesLabel {
+  color: var(--color-text-dim);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.7rem;
+  align-self: center;
+}
+
+.companiesValue {
+  color: var(--color-text-muted);
+}

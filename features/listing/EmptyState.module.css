@@ -1,0 +1,44 @@
+/* EmptyState.module.css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 24px;
+  gap: 16px;
+}
+
+.icon {
+  font-size: 3.5rem;
+  line-height: 1;
+}
+
+.heading {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #f0f0f5;
+  margin: 0;
+}
+
+.body {
+  font-size: 0.9rem;
+  color: #8888a0;
+  max-width: 380px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.resetLink {
+  margin-top: 8px;
+  font-size: 0.875rem;
+  color: #ffc83c;
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.15s ease;
+}
+
+.resetLink:hover {
+  opacity: 0.75;
+}

@@ -1,0 +1,41 @@
+/* app/movies/loading.module.css */
+
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position:  400px 0; }
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.headingPlaceholder {
+  height: 40px;
+  width: 260px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #1a1a24 25%, #242430 50%, #1a1a24 75%);
+  background-size: 800px 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+.controlsPlaceholder {
+  height: 42px;
+  width: 100%;
+  max-width: 640px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #1a1a24 25%, #242430 50%, #1a1a24 75%);
+  background-size: 800px 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (min-width: 640px)  { .grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1024px) { .grid { grid-template-columns: repeat(4, 1fr); gap: 20px; } }
+@media (min-width: 1280px) { .grid { grid-template-columns: repeat(5, 1fr); } }

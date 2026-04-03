@@ -1,0 +1,41 @@
+/* SkeletonCard.module.css */
+
+.card {
+  border-radius: 12px;
+  overflow: hidden;
+  background: #0f0f13;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Shared shimmer keyframe applied to all skeleton lines */
+@keyframes shimmer {
+  0% { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+.poster {
+  aspect-ratio: 2 / 3;
+  background: linear-gradient(90deg, #1a1a24 25%, #242430 50%, #1a1a24 75%);
+  background-size: 800px 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+.meta {
+  padding: 12px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.titleLine,
+.titleLineShort,
+.detailLine {
+  border-radius: 4px;
+  background: linear-gradient(90deg, #1a1a24 25%, #242430 50%, #1a1a24 75%);
+  background-size: 800px 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+.titleLine { height: 14px; width: 90%; }
+.titleLineShort { height: 14px; width: 60%; }
+.detailLine { height: 11px; width: 40%; margin-top: 2px; }

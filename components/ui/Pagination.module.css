@@ -1,0 +1,52 @@
+/* Pagination.module.css */
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 2rem 0;
+}
+
+.page,
+.arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: #8888a0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: transparent;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.page:hover,
+.arrow:hover {
+  background: rgba(255, 200, 60, 0.1);
+  color: #ffc83c;
+  border-color: rgba(255, 200, 60, 0.3);
+}
+
+.page.active {
+  background: #ffc83c;
+  color: #0a0a0f;
+  border-color: #ffc83c;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.ellipsis {
+  color: #555570;
+  font-size: 0.875rem;
+  padding: 0 4px;
+}
+
+.arrow {
+  font-size: 1rem;
+  padding: 0 10px;
+}

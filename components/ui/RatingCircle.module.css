@@ -1,0 +1,44 @@
+/* RatingCircle.module.css */
+
+.wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+}
+
+.svg {
+  position: absolute;
+  inset: 0;
+}
+
+@keyframes drawArc {
+  from { stroke-dashoffset: 150.796; } /* full CIRCUMFERENCE */
+  to   { stroke-dashoffset: var(--target-offset); }
+}
+
+.arc {
+  transition: stroke-dashoffset 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+  gap: 1px;
+}
+
+.score {
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.max {
+  font-size: 0.6rem;
+  color: #555570;
+  font-weight: 500;
+}
